@@ -1,0 +1,53 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        rust: ["1.75.0", "stable"]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ matrix.rust }}
+
+      - run: cargo check
+        shell: bash
+
+      - run: cargo test
+        shell: bash
+
+      - run: cargo clippy -- -D warnings
+        shell: bash
+
+  no_std:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@1.75.0
+
+      - run: rustup target add thumbv6m-none-eabi
+
+      - run: cargo check --target thumbv6m-none-eabi
+
+  msrv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - run: cargo install cargo-msrv
+
+      - run: cargo msrv verify -- cargo check --all-features
