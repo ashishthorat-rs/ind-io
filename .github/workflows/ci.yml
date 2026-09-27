@@ -55,4 +55,18 @@ no_std:
       - name: Cargo check for no_std target
         run: cargo check --target thumbv6m-none-eabi --no-default-features
 
+clippy:
+    name: Clippy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install stable + clippy
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+
+      - name: Cargo clippy
+        run: cargo clippy --all-targets --all-features -- -D warnings
+
 
