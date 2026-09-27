@@ -1,6 +1,6 @@
 // TODO: add implementation
 #[non_exhaustive]
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Speed {
     Off,
     Low,
@@ -10,7 +10,7 @@ pub enum Speed {
 }
 
 #[non_exhaustive]
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum ClimateMode {
     Cool,
     Heat,
@@ -20,7 +20,7 @@ pub enum ClimateMode {
 }
 
 #[non_exhaustive]
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum SwingMode {
     Off,
     Vertical,
