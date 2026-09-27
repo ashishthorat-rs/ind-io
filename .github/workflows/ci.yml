@@ -41,4 +41,18 @@ msrv:
       - name: Cargo test on MSRV
         run: cargo test --all-features
 
+no_std:
+    name: no_std compile check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install stable + thumbv6m target
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: thumbv6m-none-eabi
+
+      - name: Cargo check for no_std target
+        run: cargo check --target thumbv6m-none-eabi --no-default-features
+
 
