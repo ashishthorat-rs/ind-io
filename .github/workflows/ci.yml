@@ -69,4 +69,17 @@ clippy:
       - name: Cargo clippy
         run: cargo clippy --all-targets --all-features -- -D warnings
 
+fmt:
+    name: Format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install stable + rustfmt
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+
+      - name: Cargo fmt check
+        run: cargo fmt --all -- --check
 
