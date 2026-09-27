@@ -24,4 +24,21 @@ jobs:
       - name: Cargo test
         run: cargo test --all-features
 
+msrv:
+    name: MSRV (1.75.0)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@1.75.0
+
+      - name: Delete Cargo.lock for MSRV run
+        run: rm -f Cargo.lock
+
+      - name: Cargo check
+        run: cargo check --all-features
+
+      - name: Cargo test on MSRV
+        run: cargo test --all-features
+
 
