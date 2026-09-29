@@ -10,3 +10,5 @@ pub mod media;
 pub mod position;
 pub mod power;
 pub mod speed;
+
+pub use climate::ClimateControl;
