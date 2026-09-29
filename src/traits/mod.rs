@@ -12,3 +12,4 @@ pub mod power;
 pub mod speed;
 
 pub use climate::ClimateControl;
+pub use light::LightControl;
