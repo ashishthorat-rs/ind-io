@@ -15,3 +15,4 @@ pub use climate::ClimateControl;
 pub use light::LightControl;
 pub use media::MediaControl;
 pub use position::PositionControl;
+pub use power::PowerControl;
