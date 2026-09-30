@@ -16,3 +16,4 @@ pub use light::LightControl;
 pub use media::MediaControl;
 pub use position::PositionControl;
 pub use power::PowerControl;
+pub use speed::SpeedControl;
