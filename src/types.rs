@@ -1,4 +1,4 @@
-// TODO: add implementation
+pub(crate) const MAX_PERCENT: u8 = 100;
 #[non_exhaustive]
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Speed {
