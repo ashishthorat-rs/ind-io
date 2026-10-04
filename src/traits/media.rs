@@ -9,6 +9,16 @@ pub trait MediaControl: Sealed {
     fn volume_up(&mut self) -> Result<(), DeviceError>;
     fn volume_down(&mut self) -> Result<(), DeviceError>;
     fn mute(&mut self) -> Result<(), DeviceError>;
+    fn unmute(&mut self) -> Result<(), DeviceError>;
+    fn is_muted(&self) -> bool;
     fn channel(&self) -> u32;
     fn volume(&self) -> u8;
+
+    fn toggle_mute(&mut self) -> Result<(), DeviceError> {
+        if self.is_muted() {
+            self.unmute()
+        } else {
+            self.mute()
+        }
+    }
 }
