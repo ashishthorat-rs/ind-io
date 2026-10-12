@@ -7,3 +7,5 @@ pub mod light;
 pub mod switch;
 pub mod television;
 pub mod thermostat;
+
+pub use air_conditioner::AirConditioner;
