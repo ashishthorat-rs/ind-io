@@ -9,3 +9,4 @@ pub mod television;
 pub mod thermostat;
 
 pub use air_conditioner::AirConditioner;
+pub use air_purifier::AirPurifier;
