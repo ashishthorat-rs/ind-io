@@ -10,3 +10,4 @@ pub mod thermostat;
 
 pub use air_conditioner::AirConditioner;
 pub use air_purifier::AirPurifier;
+pub use curtain::Curtain;

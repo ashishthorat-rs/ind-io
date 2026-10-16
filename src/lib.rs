@@ -8,6 +8,6 @@ pub mod mock;
 pub mod traits;
 pub mod types;
 
-pub use devices::{AirConditioner, AirPurifier};
+pub use devices::{AirConditioner, AirPurifier, Curtain};
 pub use error::DeviceError;
 pub use types::{ClimateMode, Speed, SwingMode};
