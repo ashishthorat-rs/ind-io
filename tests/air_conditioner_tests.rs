@@ -139,10 +139,12 @@ fn turning_on_keeps_speed_and_climate_configured_while_off() {
     ac.set_speed(Speed::Medium).unwrap();
     ac.set_temperature(19.0).unwrap();
     ac.set_mode(ClimateMode::Heat).unwrap();
+    ac.set_swing(SwingMode::Vertical).unwrap();
     ac.turn_on().unwrap();
     assert_eq!(ac.speed(), Speed::Medium);
     assert_eq!(ac.temperature(), 19.0);
     assert_eq!(ac.mode(), ClimateMode::Heat);
+    assert_eq!(ac.swing(), SwingMode::Vertical);
 }
 
 #[test]
@@ -152,10 +154,12 @@ fn turning_off_keeps_speed_and_climate_configured() {
     ac.set_speed(Speed::High).unwrap();
     ac.set_temperature(24.0).unwrap();
     ac.set_mode(ClimateMode::Cool).unwrap();
+    ac.set_swing(SwingMode::Horizontal).unwrap();
     ac.turn_off().unwrap();
     assert_eq!(ac.speed(), Speed::High);
     assert_eq!(ac.temperature(), 24.0);
     assert_eq!(ac.mode(), ClimateMode::Cool);
+    assert_eq!(ac.swing(), SwingMode::Horizontal);
 }
 
 #[test]
