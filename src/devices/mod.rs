@@ -16,3 +16,4 @@ pub use heater::Heater;
 pub use light::Light;
 pub use switch::Switch;
 pub use television::Television;
+pub use thermostat::Thermostat;
