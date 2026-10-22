@@ -1,4 +1,3 @@
-// TODO: add implementation
 #[non_exhaustive]
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum DeviceError {
@@ -6,5 +5,4 @@ pub enum DeviceError {
     InvalidInput,
     NotSupported,
     Timeout,
-    NotInitialized,
 }
