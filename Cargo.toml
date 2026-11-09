@@ -8,3 +8,7 @@ license = "MIT OR Apache-2.0"
 [[example]]
 name = "basic_air_conditioner"
 path = "examples/basic/air_conditioner.rs"
+
+[[example]]
+name = "basic_fan"
+path = "examples/basic/fan.rs"
