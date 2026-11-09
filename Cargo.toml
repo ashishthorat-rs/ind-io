@@ -12,3 +12,7 @@ path = "examples/basic/air_conditioner.rs"
 [[example]]
 name = "basic_fan"
 path = "examples/basic/fan.rs"
+
+[[example]]
+name = "basic_light"
+path = "examples/basic/light.rs"
