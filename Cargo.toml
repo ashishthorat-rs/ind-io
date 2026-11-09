@@ -20,3 +20,7 @@ path = "examples/basic/light.rs"
 [[example]]
 name = "basic_switch"
 path = "examples/basic/switch.rs"
+
+[[example]]
+name = "basic_television"
+path = "examples/basic/television.rs"
