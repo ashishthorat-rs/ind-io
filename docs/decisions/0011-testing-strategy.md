@@ -38,7 +38,7 @@ Device integration tests verify the contract at the device level:
 
 Each test name states one behavioral claim, for example `reset_leaves_the_device_on_with_settings_unchanged`. A failing test then names the promise that broke.
 
-CI runs the tests as one of five checks on every pull request: formatting, Clippy on stable, the tests, the tests on the minimum supported Rust version, 1.75.0 (ADR-0001), and a `no_std` check and build of the library for `thumbv6m-none-eabi` (ADR-0002). The embedded job covers the library only, and the tests run on the host.
+CI runs the tests as one of five checks on every pull request: formatting, Clippy on stable, the tests, the tests on the minimum supported Rust version, 1.75.0 (ADR-0001), and a `no_std` compile check of the library for `thumbv6m-none-eabi` (ADR-0002). The embedded job covers the library only, and the tests run on the host.
 
 The Stage 1 mocks do not simulate backend failures. Tests therefore cover the errors the contract defines for them, which are `InvalidInput` for out-of-range values with state left unchanged (ADR-0004). Injecting `HardwareFailure`, `NotSupported` and `Timeout` is deferred until a backend produces them.
 
