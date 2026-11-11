@@ -24,3 +24,7 @@ path = "examples/basic/switch.rs"
 [[example]]
 name = "basic_television"
 path = "examples/basic/television.rs"
+
+[[example]]
+name = "advanced_air_purifier"
+path = "examples/advanced/air_purifier.rs"
