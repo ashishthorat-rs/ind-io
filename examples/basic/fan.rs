@@ -22,18 +22,18 @@ fn main() -> Result<(), DeviceError> {
     assert!(fan.is_on());
 
     fan.set_speed(Speed::Off)?;
-    println!("speed: {:?}, on:{}", fan.speed(), fan.is_on());
+    println!("speed: {:?}, on: {}", fan.speed(), fan.is_on());
     assert_eq!(fan.speed(), Speed::Off);
     assert!(fan.is_on());
 
     fan.set_speed(Speed::Turbo)?;
     fan.turn_off()?;
-    println!("speed: {:?}, on:{}", fan.speed(), fan.is_on());
+    println!("speed: {:?}, on: {}", fan.speed(), fan.is_on());
     assert_eq!(fan.speed(), Speed::Turbo);
     assert!(!fan.is_on());
 
     quiet_mode(&mut fan)?;
-    println!("quiet mode: speed:{:?}, on:{}", fan.speed(), fan.is_on());
+    println!("quiet mode: speed: {:?}, on: {}", fan.speed(), fan.is_on());
     assert_eq!(fan.speed(), Speed::Low);
     assert!(fan.is_on());
 
