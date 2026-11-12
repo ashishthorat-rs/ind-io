@@ -32,3 +32,7 @@ path = "examples/advanced/air_purifier.rs"
 [[example]]
 name = "advanced_all_devices"
 path = "examples/advanced/all_devices.rs"
+
+[[example]]
+name = "advanced_curtain"
+path = "examples/advanced/curtain.rs"
