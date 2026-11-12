@@ -36,3 +36,7 @@ path = "examples/advanced/all_devices.rs"
 [[example]]
 name = "advanced_curtain"
 path = "examples/advanced/curtain.rs"
+
+[[example]]
+name = "advanced_custom_device"
+path = "examples/advanced/custom_device.rs"
