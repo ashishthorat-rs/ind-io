@@ -44,3 +44,7 @@ path = "examples/advanced/custom_device.rs"
 [[example]]
 name = "advanced_heater"
 path = "examples/advanced/heater.rs"
+
+[[example]]
+name = "advanced_thermostat"
+path = "examples/advanced/thermostat.rs"
