@@ -48,3 +48,7 @@ path = "examples/advanced/heater.rs"
 [[example]]
 name = "advanced_thermostat"
 path = "examples/advanced/thermostat.rs"
+
+[[example]]
+name = "hvac_air_handling_unit"
+path = "examples/hvac/air_handling_unit.rs"
