@@ -64,3 +64,7 @@ path = "examples/hvac/thermostat.rs"
 [[example]]
 name = "mep_building_floor"
 path = "examples/mep/building_floor.rs"
+
+[[example]]
+name = "mep_pump"
+path = "examples/mep/pump.rs"
