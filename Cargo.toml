@@ -68,3 +68,7 @@ path = "examples/mep/building_floor.rs"
 [[example]]
 name = "mep_pump"
 path = "examples/mep/pump.rs"
+
+[[example]]
+name = "mep_valve"
+path = "examples/mep/valve.rs"
