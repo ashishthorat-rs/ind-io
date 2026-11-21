@@ -4,7 +4,7 @@
 //! cannot implement them, and it cannot be passed to code bounded by them.
 //! It can still own ind-io devices, call their capabilities, and pass those
 //! devices to code bounded by the traits. Here, a custom ceiling fan owns a
-//! `Fan` and `Light`. Each component retains its own power state and
+//! `Fan` and a `Light`. Each component retains its own power state and
 //! configuration. The custom `night_mode` method coordinates both parts. It
 //! is application logic, and it is not atomic. Run it with
 //! `cargo run --example advanced_custom_device`.
