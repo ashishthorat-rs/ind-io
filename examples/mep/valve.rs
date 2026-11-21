@@ -61,6 +61,7 @@ fn transfer(
     Ok(steps)
 }
 
+/// Prints the positions and the combined opening after every operation.
 fn print_steps(from_name: &str, to_name: &str, steps: &[(u8, u8)]) {
     for (number, (from, to)) in steps.iter().enumerate() {
         println!(
@@ -71,6 +72,7 @@ fn print_steps(from_name: &str, to_name: &str, steps: &[(u8, u8)]) {
     }
 }
 
+/// Asserts that the combined opening never drops below REQUIRED_PERCENT.
 fn assert_opening_kept(steps: &[(u8, u8)]) {
     for &(from, to) in steps {
         assert!(combined_percent(from, to) >= REQUIRED_PERCENT);
