@@ -100,12 +100,14 @@ fn shut_down(
     Ok(())
 }
 
+/// Prints why heating was refused. Prints nothing when the result is Ok.
 fn print_refusal(result: Result<(), UnitError>) {
     if let Err(error) = result {
         println!("Heating refused: {error}");
     }
 }
 
+/// Prints the state of the fan, the outside-air damper and the heating coil.
 fn print_state(fan: &SupplyFan, damper: &OutsideAirDamper, coil: &HeatingCoil) {
     println!("Fan: on={}, speed={:?}", fan.is_on(), fan.speed());
     println!(

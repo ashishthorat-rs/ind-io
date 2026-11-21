@@ -123,6 +123,7 @@ impl Station {
     }
 }
 
+/// The name of a speed, or "stopped" when the pump is not running.
 fn describe(speed: Option<Speed>) -> String {
     speed.map_or_else(|| String::from("stopped"), |speed| format!("{speed:?}"))
 }
