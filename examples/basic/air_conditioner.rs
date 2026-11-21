@@ -55,7 +55,7 @@ fn main() -> Result<(), DeviceError> {
     Ok(())
 }
 
-// Prints the state of any device with power, climate and speed control.
+/// Prints the state of any device with power, climate and speed control.
 fn print_state(label: &str, ac: &(impl PowerControl + ClimateControl + SpeedControl)) {
     println!(
         "{label}: on={}, mode={:?}, {:.1} C, speed={:?}, swing={:?}",

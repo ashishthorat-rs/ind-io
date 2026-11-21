@@ -5,9 +5,9 @@
 //! temperature. ind-io does not read sensors or provide a control strategy,
 //! so a small simulation stands in for sensor input and the control logic is
 //! application code. The controller switches heating on below the target
-//! minus a tolerance band and off above the target plus that band.
-//! Within the band it leaves the power state unchanged, to avoid rapid
-//! switching. In the simulation, the thermostat being on means the heating runs.
+//! minus a tolerance band and off above the target plus that band. Within
+//! the band it leaves the power state unchanged, to avoid rapid switching.
+//! In the simulation, the thermostat being on means the heating runs.
 //! Run it with `cargo run --example advanced_thermostat`.
 
 use ind_io::mock::{MockClimate, MockPower};
@@ -19,8 +19,8 @@ const HYSTERESIS_BAND_CELSIUS: f32 = 0.5;
 const HEATING_STEP_CELSIUS: f32 = 0.8;
 const COOLING_STEP_CELSIUS: f32 = 0.5;
 
-/// Switches heating on below the lower threshold and off above the
-/// upper threshold. Within the band, the current power state is retained.
+/// Switches heating on below `target - band` and off above `target + band`.
+/// Within the band, the current power state is retained.
 ///
 /// The helper works with any device that provides power and climate control.
 fn control_step<D>(device: &mut D, room_celsius: f32, band: f32) -> Result<(), DeviceError>
