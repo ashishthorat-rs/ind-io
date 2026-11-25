@@ -90,7 +90,8 @@ pub trait LightControl: Sealed {
     /// ```
     ///
     /// The mock backend accepts every value from 0 to 100 and rejects every
-    /// value above 100. The brightness and the power state stay as they were:
+    /// value above 100. A rejected value leaves the brightness and the power
+    /// state as they were:
     ///
     /// ```
     /// use ind_io::mock::{MockLight, MockPower};
@@ -105,10 +106,11 @@ pub trait LightControl: Sealed {
     ///     assert_eq!(light.brightness(), percent);
     /// }
     ///
+    /// light.set_brightness(40)?;
     /// for percent in 101..=u8::MAX {
     ///     let result = light.set_brightness(percent);
     ///     assert_eq!(result, Err(DeviceError::InvalidInput));
-    ///     assert_eq!(light.brightness(), 100);
+    ///     assert_eq!(light.brightness(), 40);
     ///     assert!(light.is_on());
     /// }
     /// # Ok::<(), ind_io::DeviceError>(())
